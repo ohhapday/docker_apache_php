@@ -21,7 +21,7 @@ class User_m extends CI_Model
         $query = "
             SELECT * FROM tb_users
             WHERE
-              id = ?
+              id = ? AND is_deleted = 0
         ";
 
         $query = $this->db->query($query, array($id));
@@ -37,7 +37,21 @@ class User_m extends CI_Model
 
     public function get_users()
     {
+        $query = "
+            SELECT * FROM tb_users
+            WHERE
+              is_deleted = 0
+        ";
 
+        $query = $this->db->query($query);
+
+        if($query->num_rows() > 0) {
+            return (object)$query->row();
+        } else {
+            return (object) array(
+                '처리결과' => '에러'
+            );
+        }
     }
 
 

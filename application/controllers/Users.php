@@ -8,13 +8,13 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends CI_Controller {
+class Users extends CI_Controller {
 
 
     function __construct()
     {
         parent::__construct();
-        $this->load->model('user_m');
+        $this->load->model('users_m');
     }
 
     public function _remap($method)
@@ -25,18 +25,20 @@ class User extends CI_Controller {
 
 
         // HTTP Method 로 분기
+        var_dump($this->uri->segment(1));
+
         switch ($this->input->method(true)) {
             case 'GET' :
-                $this->get();
+                $this->get_user();
                 break;
             case 'POST' :
-                $this->post();
+                $this->post_user();
                 break;
             case 'PUT' :
-                $this->put();
+                $this->put_user();
                 break;
             case 'DELETE' :
-                $this->delete();
+                $this->delete_user();
                 break;
             default:
                 $this->{"{$method}"}();
@@ -48,24 +50,22 @@ class User extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
-	public function get()
+    public function get_users()
     {
-        $id = $_GET['id'];
-        echo json_encode($this->user_m->get_user($id));
+        echo json_encode($this->user_m->get_users());
     }
 
-
-    public function post()
+    public function post_users()
     {
-        var_dump($_POST['email']);
+        var_dump('post');
     }
 
-    public function put()
+    public function put_users()
     {
         var_dump('put');
     }
 
-    public function delete()
+    public function delete_users()
     {
         var_dump('delete11');
     }
