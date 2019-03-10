@@ -1,0 +1,7 @@
+INSERT INTO homeDB.tb_users (id, email, password, username, cell_phone, rcmd_code, terms1, terms2, terms3, is_deleted) VALUES (1, 'test1@test.com', '1234', '김1', '010-0001-0001', 'abcd123', 1, 1, 0, 0);
+INSERT INTO homeDB.tb_users (id, email, password, username, cell_phone, rcmd_code, terms1, terms2, terms3, is_deleted) VALUES (2, 'test2@test.com', '1234', '이1', '010-0001-0002', 'abcd123', 1, 1, 0, 0);
+INSERT INTO homeDB.tb_users (id, email, password, username, cell_phone, rcmd_code, terms1, terms2, terms3, is_deleted) VALUES (3, 'test3@test.com', '1234', '박1', '010-0001-0003', 'abcd123', 1, 1, 0, 0);
+INSERT INTO homeDB.tb_users (id, email, password, username, cell_phone, rcmd_code, terms1, terms2, terms3, is_deleted) VALUES (4, 'test4@test.com', '1234', '홍1', '010-0001-0004', 'abcd123', 1, 1, 0, 0);
+INSERT INTO homeDB.tb_users (id, email, password, username, cell_phone, rcmd_code, terms1, terms2, terms3, is_deleted) VALUES (5, 'test5@test.com', '1234', '최1', '010-0001-0005', 'abcd123', 1, 1, 0, 0);
+INSERT INTO homeDB.tb_users (id, email, password, username, cell_phone, rcmd_code, terms1, terms2, terms3, is_deleted) VALUES (6, 'aaaa@aa.com', '31232131231', '홍길동', '010-8888-8888', 'ㄹㅇㅁㄹㅁㄹㅁ', 1, 1, 0, 0);
+INSERT INTO homeDB.tb_users (id, email, password, username, cell_phone, rcmd_code, terms1, terms2, terms3, is_deleted) VALUES (7, 'aaa111a@aa.com', '31232131231', '홍길동', '010-8888-8888', 'ㄹㅇㅁㄹㅁㄹㅁ', 1, 1, 0, 0);

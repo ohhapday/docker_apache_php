@@ -1,11 +1,12 @@
 create database homeDB;
 
 CREATE USER 'homeUser'@'localhost' IDENTIFIED BY 'www1234';
-CREATE USER 'homeUser'@'172.20.0.1' IDENTIFIED BY 'www1234';    // docker 내부 지정 아이피인듯
+CREATE USER 'homeUser'@'%' IDENTIFIED BY 'www1234';
+CREATE USER 'homeUser'@'%' IDENTIFIED BY '172.20.0.1';
 
 GRANT ALL PRIVILEGES on homeDB.* TO 'homeUser'@'localhost';
-GRANT ALL PRIVILEGES on homeDB.* TO 'homeUser'@'172.20.0.1';
-
+GRANT ALL PRIVILEGES on homeDB.* TO 'homeUser'@'%';
+GRANT ALL PRIVILEGES on homeDB.* TO '172.20.0.1';
 
 FLUSH PRIVILEGES;
 
@@ -22,6 +23,7 @@ create table tb_users (
                       terms1 tinyint(1) default 1 not null,
                       terms2 tinyint(1) default 1 not null,
                       terms3 tinyint(1) default 0 not null,
+                      is_deleted tinyint(1) default 0 not null,         -- 임시 삭제 필드
                       constraint tb_users_pk
                         primary key (id)
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 COLLATE = utf8_general_ci;

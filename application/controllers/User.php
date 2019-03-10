@@ -19,11 +19,6 @@ class User extends CI_Controller {
 
     public function _remap($method)
     {
-        /* if (method_exists($this, $method)) {
-            $this->{"{$method}"}();
-        }*/
-
-
         // HTTP Method 로 분기
         switch ($this->input->method(true)) {
             case 'GET' :
@@ -57,16 +52,37 @@ class User extends CI_Controller {
 
     public function post()
     {
-        var_dump($_POST['email']);
+        // Form Validation 처리 생략
+        $obj = $_POST;
+        echo json_encode($this->user_m->post_user($obj));
     }
 
     public function put()
     {
-        var_dump('put');
+        $data = file_get_contents("php://input");
+        $data = json_decode($data);
+
+        if (!empty($data)) {
+            foreach ($data as $key => $value) {
+                $obj[$key] = $value;
+            }
+        }
+
+        echo json_encode($this->user_m->put_user($obj));
+
     }
 
     public function delete()
     {
-        var_dump('delete11');
+        $data = file_get_contents("php://input");
+        $data = json_decode($data);
+
+        if (!empty($data)) {
+            foreach ($data as $key => $value) {
+                $obj[$key] = $value;
+            }
+        }
+
+        echo json_encode($this->user_m->delete_user($obj));
     }
 }
