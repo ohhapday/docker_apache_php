@@ -32,8 +32,40 @@
 
 #### 1. 회원 데이터 생성
   - url: localhost:8000/index.php/user
-![회원생성](https://raw.githubusercontent.com/ohhapday/cas-study/master/00.%20Roadmap/img/%EA%B7%B8%EB%A6%BC1.png)
-> 애당사앙
+  - HTTP Method: POST
+![회원생성](https://raw.githubusercontent.com/ohhapday/docker_apache_php/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202019-03-10%20%EC%98%A4%ED%9B%84%2012.45.50.png)
+> * 주의: POSTMAN 에서 form-data로 전송 (Params로 전송 X)
+
+<br />
+
+#### 2. 회원 데이터 수정
+  - url: localhost:8000/index.php/user
+  - HTTP Method: PUT
+![회원생성](https://raw.githubusercontent.com/ohhapday/docker_apache_php/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202019-03-10%20%EC%98%A4%ED%9B%84%2012.45.50.png)
+> * 주의: POSTMAN 에서 row->json 으로 수정데이터 전송 
+
+<br />
+
+#### 3. 회원 데이터 삭제
+  - url: localhost:8000/index.php/user
+  - HTTP Method: DELETE
+![회원생성](https://raw.githubusercontent.com/ohhapday/docker_apache_php/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202019-03-10%20%EC%98%A4%ED%9B%84%2012.45.50.png)
+> * 주의: POSTMAN 에서 row->json 으로 수정데이터 전송
+> * 실제 DB에서 삭제처리하는 것이 아닌 is_deleted 필드 업데이트를 통해 임시 삭제 처리
+
+<br />
+
+#### 4. 하나의 회원 데이터 출력
+  - url: localhost:8000/index.php/user
+  - HTTP Method: GET
+![회원생성](https://raw.githubusercontent.com/ohhapday/docker_apache_php/master/img/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7%202019-03-10%20%EC%98%A4%ED%9B%84%2012.45.50.png)
+> 주의: POSTMAN 에서 Params에서 key값 전송 
+
+
+
+
+
+
 ## 내용
 
 서비스를 사용하는 회원 데이터에 대한 CRUD(Create, Read, Update, Delete)를 처리하는 **API**를 작성합니다.
