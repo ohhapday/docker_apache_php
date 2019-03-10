@@ -1,27 +1,5 @@
 # Codeigniter를 이용한 Restful API 개발
 
-## 테스트 환경  
-  - 별도의 라이브러리 없이 Codeigniter Pure 코드로 만들었습니다.
-  - 클라이언트 페이지 제작없이 Rest API 개발툴 [POSTMAN](https://www.getpostman.com/)을 통해 테스트를 진행됩니다.
-  - [POSTMAN](https://www.getpostman.com/) 테스트시 json 표현 표준규격을 준수해야 합니다.
-```json
-    올바른 예
-    {
-      "id": 1,
-      "email": "aaa@aa.com",
-    }
-    
-    틀린 예
-    {
-      id: 1,                      // key를 따옴표로 감싸지 않음
-      'email': 'aaa@aa.com',      // key와 value를 작은따옴료포 감쌈
-    }
-```
-
-
-
-
-
 ## 내용
 
 서비스를 사용하는 회원 데이터에 대한 CRUD(Create, Read, Update, Delete)를 처리하는 **API**를 작성합니다.
