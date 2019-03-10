@@ -3,25 +3,37 @@
 ## 테스트 환경  
   - 별도의 라이브러리 없이 Codeigniter Pure 코드로 만들었습니다.
   - 클라이언트 페이지 제작없이 Rest API 개발툴 [POSTMAN](https://www.getpostman.com/)을 통해 테스트를 진행됩니다.
-  - [POSTMAN](https://www.getpostman.com/) 테스트시 json 표현 표준규격을 준수해야 합니다.
+  - [POSTMAN](https://www.getpostman.com/) 테스트시 json 표준규격을 준수해야 합니다.
 ```json
-    올바른 예
+    // 올바른 예
     {
       "id": 1,
       "email": "aaa@aa.com",
     }
     
-    틀린 예
+    // 틀린 예
     {
       id: 1,                      // key를 따옴표로 감싸지 않음
       'email': 'aaa@aa.com',      // key와 value를 작은따옴료포 감쌈
     }
 ```
+  - Mysql dump data: [20190310.sql](https://github.com/ohhapday/docker_apache_php/blob/master/20190310.sql)
 
 
+## 내용
+  - [User.php](https://github.com/ohhapday/docker_apache_php/blob/master/application/controllers/User.php), [User_m.php](https://github.com/ohhapday/docker_apache_php/blob/master/application/models/User_m.php)
+    - 회원 데이터 생성(회원 가입)API
+    - 회원 데이터 수정 API
+    - 회원 데이터 삭제 API
+    - 하나의 회원 데이터 출력 API
+  - [Users.php](https://github.com/ohhapday/docker_apache_php/blob/master/application/controllers/Users.php), [User_m.php](https://github.com/ohhapday/docker_apache_php/blob/master/application/models/Users_m.php)
+    - 여러 회원 데이터 출력(페이지를 나눠 출력) API
 
 
-
+#### 1. 회원 데이터 생성
+  - url: localhost:8000/index.php/user
+![회원생성](https://raw.githubusercontent.com/ohhapday/cas-study/master/00.%20Roadmap/img/%EA%B7%B8%EB%A6%BC1.png)
+> 애당사앙
 ## 내용
 
 서비스를 사용하는 회원 데이터에 대한 CRUD(Create, Read, Update, Delete)를 처리하는 **API**를 작성합니다.
