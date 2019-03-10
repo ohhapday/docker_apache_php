@@ -19,54 +19,44 @@ class Users extends CI_Controller {
 
     public function _remap($method)
     {
-        /* if (method_exists($this, $method)) {
-            $this->{"{$method}"}();
-        }*/
-
-
         // HTTP Method 로 분기
-        var_dump($this->uri->segment(1));
-
         switch ($this->input->method(true)) {
             case 'GET' :
-                $this->get_user();
+                $this->get();
                 break;
             case 'POST' :
-                $this->post_user();
+                $this->post();
                 break;
             case 'PUT' :
-                $this->put_user();
+                $this->put();
                 break;
             case 'DELETE' :
-                $this->delete_user();
+                $this->delete();
                 break;
             default:
                 $this->{"{$method}"}();
         }
     }
 
-	public function index()
-	{
-		$this->load->view('welcome_message');
-	}
-
-    public function get_users()
+    public function get()
     {
-        echo json_encode($this->user_m->get_users());
+        $start = $_GET['start'];
+        $limit = $_GET['limit'];
+        echo json_encode($this->users_m->get_user($start, $limit));
     }
 
-    public function post_users()
+    public function post()
     {
-        var_dump('post');
+        // 관리자 페이지용 일괄 입력
     }
 
-    public function put_users()
+    public function put()
     {
-        var_dump('put');
+        // 관리자 페이지용 일괄 변경
     }
 
-    public function delete_users()
+    public function delete()
     {
-        var_dump('delete11');
+        // 관리자 페이지용 일괄 삭제
     }
 }
